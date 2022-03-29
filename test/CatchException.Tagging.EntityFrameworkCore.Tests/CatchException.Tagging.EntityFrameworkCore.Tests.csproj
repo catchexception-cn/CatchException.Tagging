@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>CatchException.Tagging</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.0" />
+    <ProjectReference Include="..\..\src\CatchException.Tagging.EntityFrameworkCore\CatchException.Tagging.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\CatchException.Tagging.TestBase\CatchException.Tagging.TestBase.csproj" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="5.1.4" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>CatchException.Tagging</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="5.1.4" />
+    <ProjectReference Include="..\CatchException.Tagging.Domain\CatchException.Tagging.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

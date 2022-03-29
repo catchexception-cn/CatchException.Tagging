@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>CatchException.Tagging</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="5.1.4" />
+    <ProjectReference Include="..\CatchException.Tagging.Domain.Shared\CatchException.Tagging.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

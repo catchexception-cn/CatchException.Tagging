@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "CatchException.Tagging.Domain.Shared": {
+      "path": "src/CatchException.Tagging.Domain.Shared/CatchException.Tagging.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.Domain": {
+      "path": "src/CatchException.Tagging.Domain/CatchException.Tagging.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.Application.Contracts": {
+      "path": "src/CatchException.Tagging.Application.Contracts/CatchException.Tagging.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.Application": {
+      "path": "src/CatchException.Tagging.Application/CatchException.Tagging.Application.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.EntityFrameworkCore": {
+      "path": "src/CatchException.Tagging.EntityFrameworkCore/CatchException.Tagging.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.MongoDB": {
+      "path": "src/CatchException.Tagging.MongoDB/CatchException.Tagging.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.HttpApi": {
+      "path": "src/CatchException.Tagging.HttpApi/CatchException.Tagging.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.HttpApi.Client": {
+      "path": "src/CatchException.Tagging.HttpApi.Client/CatchException.Tagging.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.TestBase": {
+      "path": "test/CatchException.Tagging.TestBase/CatchException.Tagging.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.Tagging.EntityFrameworkCore.Tests": {
+      "path": "test/CatchException.Tagging.EntityFrameworkCore.Tests/CatchException.Tagging.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.Tagging.MongoDB.Tests": {
+      "path": "test/CatchException.Tagging.MongoDB.Tests/CatchException.Tagging.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.Tagging.Domain.Tests": {
+      "path": "test/CatchException.Tagging.Domain.Tests/CatchException.Tagging.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.Tagging.Application.Tests": {
+      "path": "test/CatchException.Tagging.Application.Tests/CatchException.Tagging.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.Tagging.HttpApi.Host": {
+      "path": "host/CatchException.Tagging.HttpApi.Host/CatchException.Tagging.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.Tagging.Web": {
+      "path": "src/CatchException.Tagging.Web/CatchException.Tagging.Web.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/CatchException.Tagging.HttpApi.Client.ConsoleTestApp/CatchException.Tagging.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.Tagging.Web.Host": {
+      "path": "host/CatchException.Tagging.Web.Host/CatchException.Tagging.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.Tagging.IdentityServer": {
+      "path": "host/CatchException.Tagging.IdentityServer/CatchException.Tagging.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.Tagging.Host.Shared": {
+      "path": "host/CatchException.Tagging.Host.Shared/CatchException.Tagging.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.Tagging.Web.Unified": {
+      "path": "host/CatchException.Tagging.Web.Unified/CatchException.Tagging.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.Tagging.Blazor": {
+      "path": "src/CatchException.Tagging.Blazor/CatchException.Tagging.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.Blazor.Host": {
+      "path": "host/CatchException.Tagging.Blazor.Host/CatchException.Tagging.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.Tagging.Blazor.Server": {
+      "path": "src/CatchException.Tagging.Blazor.Server/CatchException.Tagging.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.Blazor.WebAssembly": {
+      "path": "src/CatchException.Tagging.Blazor.WebAssembly/CatchException.Tagging.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.Tagging.Blazor.Server.Host": {
+      "path": "host/CatchException.Tagging.Blazor.Server.Host/CatchException.Tagging.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

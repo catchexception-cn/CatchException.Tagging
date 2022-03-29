@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "CatchException.Tagging": {
+      "path": "CatchException.Tagging.abpmdl.json"
+    }
+  }
+}

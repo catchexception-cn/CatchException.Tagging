@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+        <RootNamespace>CatchException.Tagging</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Studio.ModuleInstaller" Version="5.1.4" />
+        <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="5.1.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="..\..\CatchException.Tagging.abpmdl.json" />
+      <EmbeddedResource Include="..\..\CatchException.Tagging.abpmdl.json" />
+    </ItemGroup>
+
+</Project>

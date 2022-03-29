@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@catch-exception/tagging": [
+        "projects/tagging/src/public-api.ts"
+      ],
+      "@catch-exception/tagging/config": [
+        "projects/tagging/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/tagging/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/tagging/src/lib/proxy/*"]
+    }
+  }
+}
