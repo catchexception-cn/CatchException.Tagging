@@ -12,4 +12,8 @@
     <ProjectReference Include="..\CatchException.Tagging.EntityFrameworkCore.Tests\CatchException.Tagging.EntityFrameworkCore.Tests.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Tagging\" />
+  </ItemGroup>
+
 </Project>

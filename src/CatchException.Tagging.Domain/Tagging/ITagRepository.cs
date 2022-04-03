@@ -7,7 +7,7 @@ using Volo.Abp.Domain.Repositories;
 
 namespace CatchException.Tagging.Tagging
 {
-    public interface ITagRepository : IBasicRepository<Tag, Guid>
+    public interface ITagRepository : IRepository<Tag, Guid>
     {
         Task<List<Tag>> GetByNameAsync(string name, CancellationToken cancellationToken = default);
 
