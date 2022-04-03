@@ -1,4 +1,7 @@
 ﻿using CatchException.Tagging.EntityFrameworkCore;
+using CatchException.Tagging.Tagging;
+
+using Volo.Abp.Domain.Entities.Events.Distributed;
 using Volo.Abp.Modularity;
 
 namespace CatchException.Tagging;
@@ -12,5 +15,4 @@ namespace CatchException.Tagging;
     )]
 public class TaggingDomainTestModule : AbpModule
 {
-
 }

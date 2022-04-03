@@ -1,18 +1,15 @@
-﻿using JetBrains.Annotations;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Volo.Abp;
+﻿using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
+// ReSharper disable VirtualMemberCallInConstructor
 
 namespace CatchException.Tagging.Tagging
 {
     public class Tag : FullAuditedAggregateRoot<Guid>
     {
 
-        public virtual string Name { get; protected set; }
+        public virtual string Name { get; protected set; } = default!;
 
-        public virtual string Description { get; protected set; }
+        public virtual string Description { get; protected set; } = default!;
 
         public virtual int UsageCount { get; protected internal set; }
 
@@ -21,9 +18,9 @@ namespace CatchException.Tagging.Tagging
 
         }
 
-        public Tag(Guid id, [NotNull] string name, int usageCount = 0, string description = null)
+        public Tag(Guid id, string name, int usageCount = 0, string description = "")
+            : base(id)
         {
-            Id = id;
             Name = Check.NotNullOrWhiteSpace(name, nameof(name));
             Description = description;
             UsageCount = usageCount;
