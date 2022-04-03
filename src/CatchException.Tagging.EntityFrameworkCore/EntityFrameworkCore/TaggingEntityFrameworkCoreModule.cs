@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CatchException.Tagging.Tagging;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -14,9 +15,10 @@ public class TaggingEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<TaggingDbContext>(options =>
         {
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
+            /* Add custom repositories here. Example:
+             * options.AddRepository<Question, EfCoreQuestionRepository>();
+             */
+            options.AddRepository<Tag, EfCoreTagRepository>();
         });
     }
 }
