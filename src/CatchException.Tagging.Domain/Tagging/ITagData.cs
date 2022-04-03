@@ -9,4 +9,5 @@ public interface ITagData : IAggregateRoot<Guid>
     string Name { get; }
 
     string Description { get; }
+
 }
