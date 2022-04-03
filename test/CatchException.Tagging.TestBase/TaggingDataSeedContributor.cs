@@ -18,37 +18,34 @@ public class TaggingDataSeedContributor : IDataSeedContributor, ITransientDepend
     private readonly IGuidGenerator _guidGenerator;
     private readonly ICurrentTenant _currentTenant;
     private readonly TestData _testData;
-    protected ITagRepository _tagRepository;
 
     public TaggingDataSeedContributor(
-        IGuidGenerator guidGenerator, ICurrentTenant currentTenant, ITagRepository tagRepository, TestData testData)
-        IGuidGenerator guidGenerator, ICurrentTenant currentTenant, ITagRepository tagRepository, IUnitOfWorkManager unitOfWorkManager)
+        IGuidGenerator guidGenerator, ICurrentTenant currentTenant, ITagRepository tagRepository, TestData testData, IUnitOfWorkManager unitOfWorkManager)
     {
         _guidGenerator = guidGenerator;
         _currentTenant = currentTenant;
         _tagRepository = tagRepository;
         _unitOfWorkManager = unitOfWorkManager;
-        _tagRepository = tagRepository;
         _testData = testData;
     }
 
     public async Task SeedAsync(DataSeedContext context)
     {
-        using var uow = _unitOfWorkManager.Begin();
         /* Instead of returning the Task.CompletedTask, you can insert your test data
          * at this point!
          */
+        using var uow = _unitOfWorkManager.Begin();
         using (_currentTenant.Change(context?.TenantId))
         {
             await SeedTestTagsAsync();
+            await uow.CompleteAsync();
         }
     }
 
     private async Task SeedTestTagsAsync()
     {
-        await _tagRepository.InsertAsync(new Tag(_guidGenerator.Create(), _testData.Tag1Name,0,""));
-            await _tagRepository.InsertAsync(new Tag(Guid.NewGuid(), "Test"));
-            await uow.CompleteAsync();
-        }
+        await _tagRepository.InsertAsync(new Tag(_guidGenerator.Create(), _testData.Tag2Name));
+        await _tagRepository.InsertAsync(new Tag(_guidGenerator.Create(), _testData.Tag1Name));
+ 
     }
 }

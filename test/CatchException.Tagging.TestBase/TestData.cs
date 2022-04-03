@@ -21,6 +21,7 @@ namespace CatchException.Tagging
 
 
         public string Tag1Name { get; set; } = "DDD";
+        public string Tag2Name { get; set; } = "Test";
 
     }
 }
