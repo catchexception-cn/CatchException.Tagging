@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+
 using Volo.Abp;
 using Volo.Abp.Authorization;
 using Volo.Abp.Autofac;
+using Volo.Abp.AutoMapper;
 using Volo.Abp.Data;
 using Volo.Abp.Modularity;
 using Volo.Abp.Threading;
