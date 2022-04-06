@@ -1,4 +1,5 @@
 ﻿using CatchException.Tagging.EntityFrameworkCore;
+
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
