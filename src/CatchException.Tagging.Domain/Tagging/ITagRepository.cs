@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+
+using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
 
 namespace CatchException.Tagging.Tagging
 {
-    public interface ITagRepository : IRepository<Tag, Guid>
+    public interface ITagRepository : ITagRepository<Tag>
     {
-        Task<List<Tag>> GetByNameAsync(string name, CancellationToken cancellationToken = default);
 
+    }
+
+    public interface ITagRepository<TTag> : IRepository<TTag, Guid>
+        where TTag : class, ITag
+    {
+        Task<List<TTag>> GetByNameAsync(string name, CancellationToken cancellationToken = default);
     }
 }

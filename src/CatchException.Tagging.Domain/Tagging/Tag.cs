@@ -4,7 +4,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace CatchException.Tagging.Tagging
 {
-    public class Tag : FullAuditedAggregateRoot<Guid>
+    public class Tag : FullAuditedAggregateRoot<Guid>, ITag
     {
 
         public virtual string Name { get; protected set; } = default!;

@@ -1,7 +1,4 @@
 ﻿using CatchException.Tagging.Tagging;
-using System.Threading.Tasks;
-
-using CatchException.Tagging.Tagging;
 
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;

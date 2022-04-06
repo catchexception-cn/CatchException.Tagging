@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 using Shouldly;
 
@@ -46,7 +48,7 @@ public class Distributed_Tag_Change_Event_Tests : TaggingDomainTestBase
     {
         using (var uow = _unitOfWorkManager.Begin())
         {
-            var user = await _tagRepository.FirstOrDefaultAsync();
+            var user = (await _tagRepository.GetListAsync()).First();
             user.SetName("Test1");
 
             _testCounter.GetValue("EntityUpdatedEto<TagEto>").ShouldBe(0);
