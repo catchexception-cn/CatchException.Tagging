@@ -1,10 +1,7 @@
 ﻿using CatchException.Tagging.Tagging.Dtos;
+
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 
@@ -12,7 +9,7 @@ namespace CatchException.Tagging.Tagging
 {
     [Area(TaggingRemoteServiceConsts.ModuleName)]
     [RemoteService(Name = TaggingRemoteServiceConsts.RemoteServiceName)]
-    [Route("api/Tagging/tag")]
+    [Route("api/tagging/tag")]
     public class TagsController : AbpControllerBase, ITagAppService
     {
         private readonly ITagAppService _tagAppService;
@@ -29,9 +26,9 @@ namespace CatchException.Tagging.Tagging
         }
 
         [HttpGet]
-        public async Task<List<TagDto>> GetAsync(GetTagsInput input)
+        public async Task<List<TagDto>> GetListAsync(GetTagListInput input, CancellationToken cancellationToken)
         {
-           return  await _tagAppService.GetAsync(input);
+            return await _tagAppService.GetListAsync(input, cancellationToken);
         }
     }
 }

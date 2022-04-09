@@ -23,7 +23,7 @@ namespace CatchException.Tagging.Tagging
         [Fact]
         public async Task GetByNameAsync()
         {
-            var tag = await TagRepository.GetByNameAsync(TestData.Tag1Name);
+            var tag = await TagRepository.GetListAsync(TestData.Tag1Name);
             tag.ShouldNotBeNull();
             tag[0].Name.ShouldBe(TestData.Tag1Name);
         }

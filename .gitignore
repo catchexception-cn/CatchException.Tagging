@@ -257,3 +257,5 @@ host/CatchException.Tagging.HttpApi.Host/Logs/logs.txt
 host/CatchException.Tagging.Web.Host/Logs/logs.txt
 host/CatchException.Tagging.Web.Unified/Logs/logs.txt
 host/CatchException.Tagging.Blazor.Server.Host/Logs/logs.txt
+host/CatchException.Tagging.HttpApi.Host/appsettings.secrets.json
+host/CatchException.Tagging.IdentityServer/appsettings.secrets.json
