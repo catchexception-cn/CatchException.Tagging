@@ -7,12 +7,19 @@
     </PropertyGroup>
     
     <ItemGroup>
-        <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.Theming" Version="5.1.4" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.Theming" Version="5.2.0" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\CatchException.Tagging.Blazor\CatchException.Tagging.Blazor.csproj" />
         <ProjectReference Include="..\CatchException.Tagging.HttpApi.Client\CatchException.Tagging.HttpApi.Client.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Fody" Version="6.6.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
 </Project>

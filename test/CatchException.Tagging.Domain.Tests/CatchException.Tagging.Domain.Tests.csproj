@@ -8,12 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <ProjectReference Include="..\CatchException.Tagging.EntityFrameworkCore.Tests\CatchException.Tagging.EntityFrameworkCore.Tests.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Tagging\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Fody" Version="6.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
