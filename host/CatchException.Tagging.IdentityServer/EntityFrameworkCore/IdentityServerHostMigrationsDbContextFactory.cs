@@ -1,4 +1,5 @@
 ﻿using System.IO;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +22,8 @@ public class IdentityServerHostMigrationsDbContextFactory : IDesignTimeDbContext
     {
         var builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: false);
+            .AddJsonFile("appsettings.json", optional: false)
+            .AddJsonFile("appsettings.secrets.json", optional: true);
 
         return builder.Build();
     }

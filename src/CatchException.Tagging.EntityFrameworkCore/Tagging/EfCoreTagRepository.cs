@@ -13,7 +13,7 @@ namespace CatchException.Tagging.Tagging
         {
         }
 
-        public async Task<List<Tag>> GetByNameAsync(string name, CancellationToken cancellationToken = default)
+        public async Task<List<Tag>> GetListAsync(string name, CancellationToken cancellationToken = default)
         {
             return await (await GetDbSetAsync()).WhereIf(!name.IsNullOrEmpty(), x => x.Name.Contains(name)).ToListAsync(cancellationToken);
         }

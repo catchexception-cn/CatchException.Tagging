@@ -50,7 +50,7 @@ namespace CatchException.Tagging.Tagging
 
             newTagDto.Id.ShouldNotBe(Guid.Empty);
 
-            var myTag = await _tagAppService.GetAsync(new GetTagsInput() { ResultCount = 5, Name = newTagDto.Name });
+            var myTag = await _tagAppService.GetListAsync(new GetTagListInput() { MaxResultCount = 5, Name = newTagDto.Name });
             myTag.ShouldNotBeNull();
         }
 

@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using CatchException.Tagging.Blazor.Components
 @using Volo.Abp.Users
 @using Volo.Abp.MultiTenancy
 @using System.Security.Claims
@@ -7,6 +8,8 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 <h1>Welcome to Tagging!</h1>
+
+<TagifyInput></TagifyInput>
 
 @if (CurrentUser.IsAuthenticated)
 {

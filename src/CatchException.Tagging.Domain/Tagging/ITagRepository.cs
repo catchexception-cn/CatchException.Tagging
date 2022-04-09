@@ -17,6 +17,6 @@ namespace CatchException.Tagging.Tagging
     public interface ITagRepository<TTag> : IRepository<TTag, Guid>
         where TTag : class, ITag
     {
-        Task<List<TTag>> GetByNameAsync(string name, CancellationToken cancellationToken = default);
+        Task<List<TTag>> GetListAsync(string name, CancellationToken cancellationToken = default);
     }
 }
