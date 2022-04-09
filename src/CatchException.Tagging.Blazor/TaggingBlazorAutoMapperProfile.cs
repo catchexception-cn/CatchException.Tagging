@@ -13,9 +13,9 @@ public class TaggingBlazorAutoMapperProfile : Profile
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
         CreateMap<TagDto, TagWhitelistModel>()
-            .ForMember(des => des.Code,
-                opt => opt.MapFrom(src => src.Name))
             .ForMember(des => des.Value,
+                opt => opt.MapFrom(src => src.Name))
+            .ForMember(des => des.Code,
                 opt => opt.MapFrom(src => src.Id.ToString()));
     }
 }

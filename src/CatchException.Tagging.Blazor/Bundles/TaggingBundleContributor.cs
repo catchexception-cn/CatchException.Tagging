@@ -13,5 +13,6 @@ public class TaggingBundleContributor : IBundleContributor
     public void AddStyles(BundleContext context)
     {
         context.Add("_content/CatchException.Tagging.Blazor/libs/tagify/tagify.css");
+        context.Add("_content/CatchException.Tagging.Blazor/tagify-input.css");
     }
 }

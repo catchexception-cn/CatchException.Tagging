@@ -11,7 +11,7 @@ public class TagifyInputJsInterop : IAsyncDisposable, IScopedDependency
     public TagifyInputJsInterop(IJSRuntime jsRuntime)
     {
         _moduleTask = new Lazy<Task<IJSObjectReference>>(() => jsRuntime.InvokeAsync<IJSObjectReference>(
-            "import", "./_content/CatchException.Tagging.Blazor/tags-input.js").AsTask());
+            "import", "./_content/CatchException.Tagging.Blazor/tagify-input.js").AsTask());
     }
 
     public async ValueTask InitialAsync(DotNetObjectReference<TagifyInput> tagsInput, Guid id)
