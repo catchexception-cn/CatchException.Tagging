@@ -18,5 +18,10 @@ namespace CatchException.Tagging.Tagging
         where TTag : class, ITag
     {
         Task<List<TTag>> GetListAsync(string name, CancellationToken cancellationToken = default);
+
+        Task<List<TTag>> SearchAsync(
+            string? filter = null,
+            int maxResultCount = int.MaxValue,
+            CancellationToken cancellationToken = default);
     }
 }

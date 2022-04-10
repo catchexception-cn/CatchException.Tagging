@@ -1,7 +1,7 @@
 ﻿namespace CatchException.Tagging.Blazor.Models;
 
-public class TagWhitelistModel
+public class TagifyItemModel
 {
     public string Value { get; set; } = default!;
-    public string Code { get; set; } = default!;
+    public Guid? Code { get; set; }
 }

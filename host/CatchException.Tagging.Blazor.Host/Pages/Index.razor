@@ -3,13 +3,20 @@
 @using Volo.Abp.Users
 @using Volo.Abp.MultiTenancy
 @using System.Security.Claims
+@using System.Text.Json
+@using CatchException.Tagging.Blazor.Models
+@using CatchException.Tagging.Tagging
 @inject ICurrentUser CurrentUser
 @inject ICurrentTenant CurrentTenant
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject ITagLookupAppService tagLookupAppService
 
 <h1>Welcome to Tagging!</h1>
 
-<TagifyInput></TagifyInput>
+<TagifyInput Value="_tags"
+             ValueChanged="OnTagsChangedAsync"
+             TagLookupAppService="tagLookupAppService"></TagifyInput>
+<p>@JsonSerializer.Serialize(_tags)</p>
 
 @if (CurrentUser.IsAuthenticated)
 {
@@ -51,6 +58,7 @@
 @code
 {
     private IEnumerable<Claim> _claims;
+    private ICollection<TagifyItemModel> _tags;
 
     protected async override Task OnInitializedAsync()
     {
@@ -59,5 +67,12 @@
         {
             _claims = authState.User.Claims;
         }
+    }
+
+    private Task OnTagsChangedAsync(ICollection<TagifyItemModel> tags)
+    {
+        _tags = tags;
+
+        return Task.CompletedTask;
     }
 }

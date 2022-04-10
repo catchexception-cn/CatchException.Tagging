@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Uow;
+using System;
 
 namespace CatchException.Tagging.Tagging;
 
@@ -81,6 +82,32 @@ public abstract class TagLookupService<TTag, TTagRepository> : ITagLookupService
         }
 
         return await _tagRepository.FindAsync(id, cancellationToken: cancellationToken);
+    }
+
+    public async Task<List<ITagData>> SearchAsync(string? filter = null, int maxResultCount = int.MaxValue,
+        CancellationToken cancellationToken = default)
+    {
+        if (ExternalTagLookupServiceProvider != null)
+        {
+            return await ExternalTagLookupServiceProvider
+                .SearchAsync(
+                    filter,
+                    maxResultCount,
+                    cancellationToken
+                );
+        }
+
+        var localTags = await _tagRepository
+            .SearchAsync(
+                filter,
+                maxResultCount,
+                cancellationToken
+            );
+
+        return localTags
+            .Select(t => new TagData(t.Id, t.Name, t.Description))
+            .Cast<ITagData>()
+            .ToList();
     }
 
     protected abstract TTag CreateTag(ITagData externalTag);

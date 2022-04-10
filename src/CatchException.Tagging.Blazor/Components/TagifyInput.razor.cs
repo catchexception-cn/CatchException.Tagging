@@ -12,6 +12,10 @@ namespace CatchException.Tagging.Blazor.Components;
 
 public partial class TagifyInput
 {
+    [Parameter] public ICollection<TagifyItemModel> Value { get; set; } = default!;
+    [Parameter] public EventCallback<ICollection<TagifyItemModel>> ValueChanged { get; set; }
+    [Parameter] public ITagLookupAppService TagLookupAppService { get; set; } = default!;
+
     [Inject] public ITagAppService TagAppService { get; set; } = default!;
     [Inject] public IObjectMapper ObjectMapper { get; set; } = default!;
     [Inject] public TagifyInputJsInterop JsInterop { get; set; } = default!;
@@ -33,19 +37,25 @@ public partial class TagifyInput
     }
 
     [JSInvokable]
-    public async Task<List<TagWhitelistModel>> GetWhitelistAsync(string keyword)
+    public async Task<List<TagifyItemModel>> GetWhitelistAsync(string keyword)
     {
         _cancellationToken?.Cancel();
         _cancellationToken = new CancellationTokenSource();
 
-        var tags = await TagAppService.GetListAsync(
-            new GetTagListInput()
-            {
-                Name = keyword
-            },
-            _cancellationToken.Token);
+        var tags = (await TagLookupAppService.SearchAsync(
+            keyword,
+            20,
+            _cancellationToken.Token))
+            .ToList();
         _cancellationToken = null;
 
-        return ObjectMapper.Map<List<TagDto>, List<TagWhitelistModel>>(tags);
+        return ObjectMapper.Map<List<TagData>, List<TagifyItemModel>>(tags);
+    }
+
+    [JSInvokable]
+    public async Task OnValueChangedAsync(TagifyItemModel[]? values)
+    {
+        Value = values == null ? new List<TagifyItemModel>() : values.ToList();
+        await ValueChanged.InvokeAsync(Value);
     }
 }

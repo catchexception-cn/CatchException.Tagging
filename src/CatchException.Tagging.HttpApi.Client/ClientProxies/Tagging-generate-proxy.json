@@ -1,0 +1,287 @@
+{
+  "modules": {
+    "tagging": {
+      "rootPath": "tagging",
+      "remoteServiceName": "Tagging",
+      "controllers": {
+        "CatchException.Tagging.Tagging.TagLookupController": {
+          "controllerName": "TagLookup",
+          "controllerGroupName": "TagLookup",
+          "isRemoteService": true,
+          "apiVersion": null,
+          "type": "CatchException.Tagging.Tagging.TagLookupController",
+          "interfaces": [
+            {
+              "type": "CatchException.Tagging.Tagging.ITagLookupAppService"
+            }
+          ],
+          "actions": {
+            "FindByIdAsyncByIdAndCancellationToken": {
+              "uniqueName": "FindByIdAsyncByIdAndCancellationToken",
+              "name": "FindByIdAsync",
+              "httpMethod": "GET",
+              "url": "api/tagging/tag-lookup/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "cancellationToken",
+                  "typeAsString": "System.Threading.CancellationToken, System.Private.CoreLib",
+                  "type": "System.Threading.CancellationToken",
+                  "typeSimple": "System.Threading.CancellationToken",
+                  "isOptional": true,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "CatchException.Tagging.Tagging.TagData",
+                "typeSimple": "CatchException.Tagging.Tagging.TagData"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "CatchException.Tagging.Tagging.ITagLookupAppService"
+            },
+            "SearchAsyncByFilterAndMaxResultCountAndCancellationToken": {
+              "uniqueName": "SearchAsyncByFilterAndMaxResultCountAndCancellationToken",
+              "name": "SearchAsync",
+              "httpMethod": "GET",
+              "url": "api/tagging/tag-lookup/search",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "filter",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": true,
+                  "defaultValue": null
+                },
+                {
+                  "name": "maxResultCount",
+                  "typeAsString": "System.Int32, System.Private.CoreLib",
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": true,
+                  "defaultValue": 2147483647
+                },
+                {
+                  "name": "cancellationToken",
+                  "typeAsString": "System.Threading.CancellationToken, System.Private.CoreLib",
+                  "type": "System.Threading.CancellationToken",
+                  "typeSimple": "System.Threading.CancellationToken",
+                  "isOptional": true,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "filter",
+                  "name": "filter",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "maxResultCount",
+                  "name": "maxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<CatchException.Tagging.Tagging.TagData>",
+                "typeSimple": "[CatchException.Tagging.Tagging.TagData]"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "CatchException.Tagging.Tagging.ITagLookupAppService"
+            }
+          }
+        },
+        "CatchException.Tagging.Tagging.TagsController": {
+          "controllerName": "Tags",
+          "controllerGroupName": "Tags",
+          "isRemoteService": true,
+          "apiVersion": null,
+          "type": "CatchException.Tagging.Tagging.TagsController",
+          "interfaces": [
+            {
+              "type": "CatchException.Tagging.Tagging.ITagAppService"
+            }
+          ],
+          "actions": {
+            "CreateAsyncByInput": {
+              "uniqueName": "CreateAsyncByInput",
+              "name": "CreateAsync",
+              "httpMethod": "PUT",
+              "url": "api/tagging/tag",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "CatchException.Tagging.Tagging.Dtos.CreateTagDto, CatchException.Tagging.Application.Contracts",
+                  "type": "CatchException.Tagging.Tagging.Dtos.CreateTagDto",
+                  "typeSimple": "CatchException.Tagging.Tagging.Dtos.CreateTagDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "CatchException.Tagging.Tagging.Dtos.CreateTagDto",
+                  "typeSimple": "CatchException.Tagging.Tagging.Dtos.CreateTagDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "CatchException.Tagging.Tagging.Dtos.TagDto",
+                "typeSimple": "CatchException.Tagging.Tagging.Dtos.TagDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "CatchException.Tagging.Tagging.ITagAppService"
+            },
+            "GetListAsyncByInputAndCancellationToken": {
+              "uniqueName": "GetListAsyncByInputAndCancellationToken",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/tagging/tag",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "CatchException.Tagging.Tagging.Dtos.GetTagListInput, CatchException.Tagging.Application.Contracts",
+                  "type": "CatchException.Tagging.Tagging.Dtos.GetTagListInput",
+                  "typeSimple": "CatchException.Tagging.Tagging.Dtos.GetTagListInput",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "cancellationToken",
+                  "typeAsString": "System.Threading.CancellationToken, System.Private.CoreLib",
+                  "type": "System.Threading.CancellationToken",
+                  "typeSimple": "System.Threading.CancellationToken",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "Name",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<CatchException.Tagging.Tagging.Dtos.TagDto>",
+                "typeSimple": "[CatchException.Tagging.Tagging.Dtos.TagDto]"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "CatchException.Tagging.Tagging.ITagAppService"
+            }
+          }
+        },
+        "CatchException.Tagging.Samples.SampleController": {
+          "controllerName": "Sample",
+          "controllerGroupName": "Sample",
+          "isRemoteService": true,
+          "apiVersion": null,
+          "type": "CatchException.Tagging.Samples.SampleController",
+          "interfaces": [
+            {
+              "type": "CatchException.Tagging.Samples.ISampleAppService"
+            }
+          ],
+          "actions": {
+            "GetAsync": {
+              "uniqueName": "GetAsync",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/Tagging/sample",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "CatchException.Tagging.Samples.SampleDto",
+                "typeSimple": "CatchException.Tagging.Samples.SampleDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "CatchException.Tagging.Samples.ISampleAppService"
+            },
+            "GetAuthorizedAsync": {
+              "uniqueName": "GetAuthorizedAsync",
+              "name": "GetAuthorizedAsync",
+              "httpMethod": "GET",
+              "url": "api/Tagging/sample/authorized",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "CatchException.Tagging.Samples.SampleDto",
+                "typeSimple": "CatchException.Tagging.Samples.SampleDto"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "CatchException.Tagging.Samples.ISampleAppService"
+            }
+          }
+        }
+      }
+    }
+  },
+  "types": {}
+}

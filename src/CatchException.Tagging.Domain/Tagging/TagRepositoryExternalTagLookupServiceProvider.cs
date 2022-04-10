@@ -17,4 +17,15 @@ public class TagRepositoryExternalTagLookupServiceProvider : IExternalTagLookupS
             (await TagRepository.FindAsync(id, false, cancellationToken))
             ?.ToTagData();
     }
+
+    public async Task<List<ITagData>> SearchAsync(string? filter = null, int maxResultCount = int.MaxValue,
+        CancellationToken cancellationToken = default)
+    {
+        var tags = await TagRepository.SearchAsync(filter, maxResultCount, cancellationToken);
+
+        return tags
+            .Select(t => new TagData(t.Id, t.Name, t.Description))
+            .Cast<ITagData>()
+            .ToList();
+    }
 }

@@ -6,4 +6,9 @@ public interface ITagLookupService<TTag>
         Guid id,
         CancellationToken cancellationToken = default
     );
+
+    Task<List<ITagData>> SearchAsync(
+        string? filter = null,
+        int maxResultCount = int.MaxValue,
+        CancellationToken cancellationToken = default);
 }
